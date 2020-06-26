@@ -1,5 +1,7 @@
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ThirtyDaysCode {
     private static final Scanner scan = new Scanner(System.in);
@@ -32,9 +34,222 @@ public class ThirtyDaysCode {
 
         // getHeight(root);
         // levelOrder(root);
-        
+        // runningTimeAndComplexity();
+        // nestedLogic();
+
+        // TestWithEmptyArray();
+        // TestWithUniqueValues();
+        // TestWithExactlyTwoDifferentMinimums();
+        // System.out.println("OK");
+
+        // regexPatterns();
+
+        // bitwiseAnd();
     }
 
+    public static void bitwiseAnd() {
+        int t = scan.nextInt();
+        scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int tItr = 0; tItr < t; tItr++) {
+            String[] nk = scan.nextLine().split(" ");
+            int n = Integer.parseInt(nk[0]);
+            int k = Integer.parseInt(nk[1]);
+            if(((k - 1) | k) > n && k % 2 == 0){
+                System.out.println(k - 2);
+            } else {
+                System.out.println(k - 1);               
+            }
+        }
+
+        scan.close();
+    }
+
+    public static void regexPatterns() {
+        int N = scan.nextInt();
+        scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        List<String> names = new ArrayList<>();
+        String emailRegEx = ".+@gmail\\.com$";
+        Pattern pattern = Pattern.compile(emailRegEx);
+
+        for (int NItr = 0; NItr < N; NItr++) {
+            String[] firstNameEmailID = scan.nextLine().split(" ");
+            String firstName = firstNameEmailID[0];
+            String emailID = firstNameEmailID[1];
+            Matcher matcher = pattern.matcher(emailID);
+            if(matcher.find()) {
+                names.add(firstName);
+            }
+        }
+
+        for (int i = 0; i < names.size(); i++) {
+            for (int j = i + 1; j < names.size(); j++) { 
+                if (names.get(i).compareTo(names.get(j)) > 0) {
+                    String temp = names.get(i);
+                    names.set(i, names.get(j));
+                    names.set(j, temp);
+                }
+            }
+        }
+
+        for (String string : names) {
+            System.out.println(string);
+        }
+
+        scan.close();
+    }
+
+    public static void TestWithEmptyArray() {
+        try {
+            int[] seq = TestDataEmptyArray.get_array();
+            int result = minimum_index(seq);
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+        throw new AssertionError("Exception wasn't thrown as expected");
+    }
+
+    public static void TestWithUniqueValues() {
+        int[] seq = TestDataUniqueValues.get_array();
+        if (seq.length < 2) {
+            throw new AssertionError("less than 2 elements in the array");
+        }
+
+        Integer[] tmp = new Integer[seq.length];
+        for (int i = 0; i < seq.length; ++i) {
+            tmp[i] = Integer.valueOf(seq[i]);
+        }
+        if (!((new LinkedHashSet<Integer>(Arrays.asList(tmp))).size() == seq.length)) {
+            throw new AssertionError("not all values are unique");
+        }
+
+        int expected_result = TestDataUniqueValues.get_expected_result();
+        int result = minimum_index(seq);
+        if (result != expected_result) {
+            throw new AssertionError("result is different than the expected result");
+        }
+    }
+
+    public static void TestWithExactlyTwoDifferentMinimums() {
+        int[] seq = TestDataExactlyTwoDifferentMinimums.get_array();
+        if (seq.length < 2) {
+            throw new AssertionError("less than 2 elements in the array");
+        }
+
+        int[] tmp = seq.clone();
+        Arrays.sort(tmp);
+        if (!(tmp[0] == tmp[1] && (tmp.length == 2 || tmp[1] < tmp[2]))) {
+            throw new AssertionError("there are not exactly two minimums in the array");
+        }
+
+        int expected_result = TestDataExactlyTwoDifferentMinimums.get_expected_result();
+        int result = minimum_index(seq);
+        if (result != expected_result) {
+            throw new AssertionError("result is different than the expected result");
+        }
+    }
+
+    public static class TestDataEmptyArray {
+        public static int[] get_array() {
+            // complete this function
+            return new int[]{};
+        }
+    }
+
+    public static class TestDataUniqueValues {
+        public static int[] get_array() {
+            // complete this function
+            return new int[]{1, 2};
+        }
+
+        public static int get_expected_result() {
+            // complete this function
+            return 0;
+        }
+    }
+
+    public static class TestDataExactlyTwoDifferentMinimums {
+        public static int[] get_array() {
+            // complete this function
+            return new int[]{1, 1};
+        }
+
+        public static int get_expected_result() {
+            // complete this function
+            return 0;
+        }
+    }
+
+    public static int minimum_index(int[] seq) {
+        if (seq.length == 0) {
+            throw new IllegalArgumentException("Cannot get the minimum value index from an empty sequence");
+        }
+        int min_idx = 0;
+        for (int i = 1; i < seq.length; ++i) {
+            if (seq[i] < seq[min_idx]) {
+                min_idx = i;
+            }
+        }
+        return min_idx;
+    }
+
+    public static void nestedLogic() {
+        int AD = scan.nextInt();
+        int AM = scan.nextInt();
+        int AY = scan.nextInt();
+
+        int ED = scan.nextInt();
+        int EM = scan.nextInt();
+        int EY = scan.nextInt();
+
+        int totalHackos = 0;
+
+        if(AY > EY) {
+            totalHackos = 10000;
+        } else  {
+            if(AM > EM && AY == EY) {
+                totalHackos = (AM - EM) * 500;
+            } else if(AD > ED && AM == EM) {
+                totalHackos = (AD - ED) * 15;
+            }
+        }
+        System.out.print(totalHackos);
+    }
+
+    public static void runningTimeAndComplexity() {
+        scan.nextInt();
+        while(scan.hasNext()) {
+            int num = scan.nextInt();
+            if(num == 1) {
+                System.out.println("Not prime");
+                continue;
+            }
+            boolean flag = false;
+            for(int i = 2; i <= num / 2; i++) {
+                if(num % i == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag)
+                System.out.println("Prime");
+            else
+                System.out.println("Not prime");
+        }
+    }
+
+    public static void linkedListDeletion() {
+        Node head = null;
+        int T = scan.nextInt();
+        while(T-- > 0){
+            int ele = scan.nextInt();
+            head = insert(head,ele);
+        }
+        head = removeDuplicates(head);
+        display(head);
+    }
+    
     public static Node removeDuplicates(Node head) {
         if (head == null || head.next == null){
             return head;
@@ -48,6 +263,16 @@ public class ThirtyDaysCode {
         return head;
     }
 
+    public static void binaryTree() {
+        int T = scan.nextInt();
+        Node2 root = null;
+        while(T-- > 0){
+            int data = scan.nextInt();
+            root = insert2(root,data);
+        }
+        levelOrder(root);
+    }
+
     public static void levelOrder(Node2 root){
         Queue<Node2> queue = new LinkedList<>();
         queue.add(root);
@@ -59,6 +284,17 @@ public class ThirtyDaysCode {
             if (current.right != null) 
                 queue.add(current.right);
         }
+    }
+
+    public static void binarySearchTree() {
+        int T = scan.nextInt();
+        Node2 root = null;
+        while(T-- > 0){
+            int data = scan.nextInt();
+            root = insert2(root,data);
+        }
+        int height = getHeight(root);
+        System.out.println(height);
     }
 
     public static int getHeight(Node2 root){
@@ -87,12 +323,42 @@ public class ThirtyDaysCode {
         }
     }
 
+    public static void display2(Node2 head){
+        Node2 start = head;
+        while(start != null) {
+            System.out.print(start.data + " ");
+            start = start.right;
+        }
+    }
+
     public static class Node2 {
         Node2 left, right;
         int data;
         Node2(int data) {
             this.data = data;
             left = right = null;
+        }
+    }
+
+    public static void generics() {
+        int n = scan.nextInt();
+        Integer[] intArray = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            intArray[i] = scan.nextInt();
+        }
+
+        n = scan.nextInt();
+        String[] stringArray = new String[n];
+        for (int i = 0; i < n; i++) {
+            stringArray[i] = scan.next();
+        }
+        
+        Printer<Integer> intPrinter = new Printer<Integer>();
+        Printer<String> stringPrinter = new Printer<String>();
+        intPrinter.printArray(intArray);
+        stringPrinter.printArray(stringArray);
+        if(Printer.class.getDeclaredMethods().length > 1){
+            System.out.println("The Printer class should only have 1 method named printArray.");
         }
     }
 
@@ -141,8 +407,14 @@ public class ThirtyDaysCode {
         }
     }
 
-    interface AdvancedArithmetic{
-        int divisorSum(int n);
+    public static void interfaces() {
+        int n = scan.nextInt();
+        scan.close();
+        
+      	AdvancedArithmetic myCalculator = new Calculator2(); 
+        int sum = myCalculator.divisorSum(n);
+        System.out.println("I implemented: " + myCalculator.getClass().getInterfaces()[0].getName() );
+        System.out.println(sum);
     }
 
     public static class Calculator2 implements AdvancedArithmetic {
@@ -157,6 +429,39 @@ public class ThirtyDaysCode {
             }
             return sum;
         }
+    }
+
+    interface AdvancedArithmetic{
+        int divisorSum(int n);
+    }
+
+    public static void queuesAndStackes() {
+        String input = scan.nextLine();
+        scan.close();
+
+        // Convert input String to an array of characters:
+        char[] s = input.toCharArray();
+
+        // Create a Solution object:
+        QueuesStacks p = new QueuesStacks();
+
+        // Enqueue/Push all chars to their respective data structures:
+        for (char c : s) {
+            p.pushCharacter(c);
+            p.enqueueCharacter(c);
+        }
+
+        // Pop/Dequeue the chars at the head of both data structures and compare them:
+        boolean isPalindrome = true;
+        for (int i = 0; i < s.length/2; i++) {
+            if (p.popCharacter() != p.dequeueCharacter()) {
+                isPalindrome = false;                
+                break;
+            }
+        }
+
+        //Finally, print whether string s is palindrome or not.
+        System.out.println( "The word, " + input + ", is " + ( (!isPalindrome) ? "not a palindrome." : "a palindrome." );
     }
 
     public static class QueuesStacks {
@@ -181,6 +486,23 @@ public class ThirtyDaysCode {
             myQueue.remove();
             return c;
         }
+    }
+
+    public static void moreException() {
+        int t = scan.nextInt();
+        while (t-- > 0) {
+            int n = scan.nextInt();
+            int p = scan.nextInt();
+            Calculator myCalculator = new Calculator();
+            try {
+                int ans = myCalculator.power(n, p);
+                System.out.println(ans);
+            }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        scan.close();
     }
 
     public static class Calculator {
@@ -280,7 +602,7 @@ public class ThirtyDaysCode {
         }
     }
 
-    static void abstractClasses() {
+    public static void abstractClasses() {
         String title = scan.nextLine();
         String author = scan.nextLine();
         int price = scan.nextInt();
@@ -317,7 +639,7 @@ public class ThirtyDaysCode {
         }
     }
 
-    static void inheritance() {
+    public static void inheritance() {
         String firstName = scan.next();
         String lastName = scan.next();
         int id = scan.nextInt();
@@ -383,7 +705,7 @@ public class ThirtyDaysCode {
         }
     }
 
-    static void hourglassSum() {
+    public static void hourglassSum() {
         int[][] arr = new int[6][6];
         for (int i = 0; i < 6; i++) {
             String[] arrRowItems = scan.nextLine().split(" ");
@@ -408,7 +730,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void binaryNumbers() {
+    public static void binaryNumbers() {
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         int remainder = 0, maxCount = 0, lastMaxCount = 0;
@@ -427,7 +749,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void recursion() throws IOException {
+    public static void recursion() throws IOException {
         bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -442,13 +764,13 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static int factorial(int n) {
+    public static int factorial(int n) {
         if (n == 0)
             return 1;
         return n * factorial(n - 1);
     }
 
-    static void dictionariesAndMap() {
+    public static void dictionariesAndMap() {
         int n = scan.nextInt();
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         for (int i = 0; i < n; i++) {
@@ -467,7 +789,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void arrays() {
+    public static void arrays() {
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -488,7 +810,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void letsReview() {
+    public static void letsReview() {
         scan.nextLine();
         while (scan.hasNext()) {
             String s = scan.nextLine();
@@ -507,7 +829,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void loops() {
+    public static void loops() {
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -518,7 +840,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void classVsInstance() {
+    public static void classVsInstance() {
         int T = scan.nextInt();
         for (int i = 0; i < T; i++) {
             int age = scan.nextInt();
@@ -560,7 +882,7 @@ public class ThirtyDaysCode {
         }
     }
 
-    static void conditionalStatements() {
+    public static void conditionalStatements() {
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         String result = "";
@@ -580,7 +902,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void operators() {
+    public static void operators() {
         double meal_cost = scan.nextDouble();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -598,7 +920,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void dataTypes() {
+    public static void dataTypes() {
         int i = 4;
         double d = 4.0;
         String s = "HackerRank ";
@@ -615,7 +937,7 @@ public class ThirtyDaysCode {
         scan.close();
     }
 
-    static void helloWorld() {
+    public static void helloWorld() {
         String inputString = scan.nextLine();
         scan.close();
         System.out.println("Hello, World. \n" + inputString);
