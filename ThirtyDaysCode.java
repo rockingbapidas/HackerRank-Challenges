@@ -32,23 +32,20 @@ public class ThirtyDaysCode {
 
         // getHeight(root);
         // levelOrder(root);
+        
     }
 
     public static Node removeDuplicates(Node head) {
-        if(head == null) return null;
-
-        Node current = head;
-        Node temp = head.next;
-
-        while(current != null) {
-            if(current.data != temp.data) {
-
-            } else {
-                temp
-            }
-
-            current = current.next;
+        if (head == null || head.next == null){
+            return head;
         }
+        if (head.data == head.next.data){
+            head.next = head.next.next;
+            removeDuplicates(head);
+        } else {
+            removeDuplicates(head.next);
+        }
+        return head;
     }
 
     public static void levelOrder(Node2 root){
