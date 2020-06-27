@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HackerRankBinarySearchTree {
+public class HackerRankTree {
     public static void main(String[] args) {
         // heightOfBinaryTree();
         lowestAnsecster();
