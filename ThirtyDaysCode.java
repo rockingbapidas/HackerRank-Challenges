@@ -4,8 +4,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ThirtyDaysCode {
-    private static final Scanner scan = new Scanner(System.in);
-    private static BufferedWriter bufferedWriter;
 
     public static void main(String[] args) throws IOException {
         // helloWorld();
@@ -48,6 +46,7 @@ public class ThirtyDaysCode {
     }
 
     public static void bitwiseAnd() {
+        Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -66,6 +65,7 @@ public class ThirtyDaysCode {
     }
 
     public static void regexPatterns() {
+        Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -195,6 +195,7 @@ public class ThirtyDaysCode {
     }
 
     public static void nestedLogic() {
+        Scanner scan = new Scanner(System.in);
         int AD = scan.nextInt();
         int AM = scan.nextInt();
         int AY = scan.nextInt();
@@ -215,9 +216,11 @@ public class ThirtyDaysCode {
             }
         }
         System.out.print(totalHackos);
+        scan.close();
     }
 
     public static void runningTimeAndComplexity() {
+        Scanner scan = new Scanner(System.in);
         scan.nextInt();
         while(scan.hasNext()) {
             int num = scan.nextInt();
@@ -237,9 +240,11 @@ public class ThirtyDaysCode {
             else
                 System.out.println("Not prime");
         }
+        scan.close();
     }
 
     public static void linkedListDeletion() {
+        Scanner scan = new Scanner(System.in);
         Node head = null;
         int T = scan.nextInt();
         while(T-- > 0){
@@ -248,6 +253,7 @@ public class ThirtyDaysCode {
         }
         head = removeDuplicates(head);
         display(head);
+        scan.close();
     }
     
     public static Node removeDuplicates(Node head) {
@@ -264,6 +270,7 @@ public class ThirtyDaysCode {
     }
 
     public static void binaryTree() {
+        Scanner scan = new Scanner(System.in);
         int T = scan.nextInt();
         Node2 root = null;
         while(T-- > 0){
@@ -271,6 +278,7 @@ public class ThirtyDaysCode {
             root = insert2(root,data);
         }
         levelOrder(root);
+        scan.close();
     }
 
     public static void levelOrder(Node2 root){
@@ -287,6 +295,7 @@ public class ThirtyDaysCode {
     }
 
     public static void binarySearchTree() {
+        Scanner scan = new Scanner(System.in);
         int T = scan.nextInt();
         Node2 root = null;
         while(T-- > 0){
@@ -295,6 +304,7 @@ public class ThirtyDaysCode {
         }
         int height = getHeight(root);
         System.out.println(height);
+        scan.close();
     }
 
     public static int getHeight(Node2 root){
@@ -341,6 +351,7 @@ public class ThirtyDaysCode {
     }
 
     public static void generics() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         Integer[] intArray = new Integer[n];
         for (int i = 0; i < n; i++) {
@@ -360,6 +371,7 @@ public class ThirtyDaysCode {
         if(Printer.class.getDeclaredMethods().length > 1){
             System.out.println("The Printer class should only have 1 method named printArray.");
         }
+        scan.close();
     }
 
     public static class Printer <T> {
@@ -377,6 +389,7 @@ public class ThirtyDaysCode {
     }
 
     public static void sorting() {
+        Scanner scan = new Scanner(System.in);
         int n = 3;
         int[] a = new int[n];
         for(int a_i = 0; a_i < n; a_i++){
@@ -405,9 +418,11 @@ public class ThirtyDaysCode {
         } else {
             System.out.println("First Element: "+ a[0]);
         }
+        scan.close();
     }
 
     public static void interfaces() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.close();
         
@@ -436,6 +451,7 @@ public class ThirtyDaysCode {
     }
 
     public static void queuesAndStackes() {
+        Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         scan.close();
 
@@ -461,7 +477,7 @@ public class ThirtyDaysCode {
         }
 
         //Finally, print whether string s is palindrome or not.
-        System.out.println( "The word, " + input + ", is " + ( (!isPalindrome) ? "not a palindrome." : "a palindrome." );
+        System.out.println( "The word, " + input + ", is " + ( (!isPalindrome) ? "not a palindrome." : "a palindrome." ));
     }
 
     public static class QueuesStacks {
@@ -489,6 +505,7 @@ public class ThirtyDaysCode {
     }
 
     public static void moreException() {
+        Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         while (t-- > 0) {
             int n = scan.nextInt();
@@ -516,6 +533,7 @@ public class ThirtyDaysCode {
     }
 
     public static void exceptionsStringToInteger() {
+        Scanner scan = new Scanner(System.in);
         String S = scan.next();
         try {
             int value = Integer.parseInt(S);
@@ -523,9 +541,11 @@ public class ThirtyDaysCode {
         } catch(Exception exception) {
             System.out.println("Bad String");
         }
+        scan.close();
     }
 
     public static void linkedList() {
+        Scanner scan = new Scanner(System.in);
         Node head = null;
         int N = scan.nextInt();
 
@@ -570,6 +590,7 @@ public class ThirtyDaysCode {
     }
 
     static void scope() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
@@ -603,6 +624,7 @@ public class ThirtyDaysCode {
     }
 
     public static void abstractClasses() {
+        Scanner scan = new Scanner(System.in);
         String title = scan.nextLine();
         String author = scan.nextLine();
         int price = scan.nextInt();
@@ -640,6 +662,7 @@ public class ThirtyDaysCode {
     }
 
     public static void inheritance() {
+        Scanner scan = new Scanner(System.in);
         String firstName = scan.next();
         String lastName = scan.next();
         int id = scan.nextInt();
@@ -706,6 +729,7 @@ public class ThirtyDaysCode {
     }
 
     public static void hourglassSum() {
+        Scanner scan = new Scanner(System.in);
         int[][] arr = new int[6][6];
         for (int i = 0; i < 6; i++) {
             String[] arrRowItems = scan.nextLine().split(" ");
@@ -731,6 +755,7 @@ public class ThirtyDaysCode {
     }
 
     public static void binaryNumbers() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         int remainder = 0, maxCount = 0, lastMaxCount = 0;
@@ -750,7 +775,8 @@ public class ThirtyDaysCode {
     }
 
     public static void recursion() throws IOException {
-        bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        Scanner scan = new Scanner(System.in);
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -771,6 +797,7 @@ public class ThirtyDaysCode {
     }
 
     public static void dictionariesAndMap() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         for (int i = 0; i < n; i++) {
@@ -790,6 +817,7 @@ public class ThirtyDaysCode {
     }
 
     public static void arrays() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -811,6 +839,7 @@ public class ThirtyDaysCode {
     }
 
     public static void letsReview() {
+        Scanner scan = new Scanner(System.in);
         scan.nextLine();
         while (scan.hasNext()) {
             String s = scan.nextLine();
@@ -830,6 +859,7 @@ public class ThirtyDaysCode {
     }
 
     public static void loops() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -841,6 +871,7 @@ public class ThirtyDaysCode {
     }
 
     public static void classVsInstance() {
+        Scanner scan = new Scanner(System.in);
         int T = scan.nextInt();
         for (int i = 0; i < T; i++) {
             int age = scan.nextInt();
@@ -883,6 +914,7 @@ public class ThirtyDaysCode {
     }
 
     public static void conditionalStatements() {
+        Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         String result = "";
@@ -903,6 +935,7 @@ public class ThirtyDaysCode {
     }
 
     public static void operators() {
+        Scanner scan = new Scanner(System.in);
         double meal_cost = scan.nextDouble();
         scan.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -921,6 +954,7 @@ public class ThirtyDaysCode {
     }
 
     public static void dataTypes() {
+        Scanner scan = new Scanner(System.in);
         int i = 4;
         double d = 4.0;
         String s = "HackerRank ";
@@ -938,6 +972,7 @@ public class ThirtyDaysCode {
     }
 
     public static void helloWorld() {
+        Scanner scan = new Scanner(System.in);
         String inputString = scan.nextLine();
         scan.close();
         System.out.println("Hello, World. \n" + inputString);
