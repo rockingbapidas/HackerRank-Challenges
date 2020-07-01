@@ -2,8 +2,8 @@ import java.util.*;
 
 public class HackerRankTree {
     public static void main(String[] args) {
-        // heightOfBinaryTree();
-        lowestAnsecster();
+        heightOfBinaryTree();
+        //lowestAnsecster();
     }
 
     public static void lowestAnsecster() {
@@ -44,7 +44,7 @@ public class HackerRankTree {
         int leftCount = height(root.left);
         int rightCount = height(root.right);
 
-        return (leftCount > rightCount ? leftCount : rightCount) + 1;
+        return Math.max(leftCount, rightCount) + 1;
     }
 
     public static Node insert(Node root, int data) {
