@@ -2,8 +2,8 @@ import java.util.*;
 
 public class HackerRankTree {
     public static void main(String[] args) {
-        heightOfBinaryTree();
-        //lowestAnsecster();
+        //heightOfBinaryTree();
+        lowestAnsecster();
     }
 
     public static void lowestAnsecster() {
@@ -21,7 +21,8 @@ public class HackerRankTree {
     }
 
     public static Node lca(Node root, int v1, int v2) {
-        // Write your code here.
+        if(root == null) return null;
+        
         return null;
     }
 
