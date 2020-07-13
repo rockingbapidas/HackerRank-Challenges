@@ -3,11 +3,7 @@ import java.util.*;
 public class HackerRankArrays {
     
     public static void main(String[] args) {
-        // hourglassSum();
-        // rotLeft();
-        // minimumBribes();
-        // minimumSwaps();
-        // arrayManipulation();
+        hourglassSum(new int[][]{{1,2,4,5,6}, {2,3,5,6,7}});
     }
 
     static int hourglassSum(int[][] arr) {

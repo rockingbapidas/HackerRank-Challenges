@@ -2,7 +2,6 @@ import java.util.*;
 
 public class HackerRankTree {
     public static void main(String[] args) {
-        //heightOfBinaryTree();
         lowestAnsecster();
     }
 

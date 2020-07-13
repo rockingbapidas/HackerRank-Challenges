@@ -3,10 +3,6 @@ import java.util.*;
 public class HackerRankHashMap {
 
     public static void main(String[] args) {
-        // checkMagazine();
-        // twoStrings();
-        // sherlockAndAnagrams();
-        // countTriplets();
         List<List<Integer>> list = new ArrayList<>();
         freqQuery(list);
     }

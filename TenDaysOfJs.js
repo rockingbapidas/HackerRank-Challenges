@@ -23,25 +23,7 @@ function readLine() {
 }
 
 function main() {
-    // greeting(parameterVariable);
-    // performOperation()
-    // arithmeticOperators()
-    // console.log(factorial(6));
-    // vowelsAndConsonants("asdakfmeocemowimc");
-    // regexVar();
-    // isPositive(3);
-    // inheritance();
-    // letAndConstant();
-    // getGrade();
-    // getLetter();
-    // Rectangle();
-    // getCount();
-    // getDayName();
-    // regexVar2();
-    // getMaxLessThanK();
-    // sides();
-    // modifyArray();
-    // regexVar3()
+    regexVar3()
 }
 
 function regexVar3() {

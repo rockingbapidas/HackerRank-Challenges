@@ -4,10 +4,7 @@ import java.util.regex.*;
 public class HackerRankWarmup {
 
     public static void main(String[] args) {
-        // countingValleys();
-        // jumpingOnClouds();
-        // repeatedString();
-        // sockMerchant();
+        sockMerchant(3, new int[]{1,2,3,4,5});
     }
 
     static int sockMerchant(int n, int[] ar) {

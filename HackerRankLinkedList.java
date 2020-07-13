@@ -3,10 +3,10 @@ import java.util.*;
 public class HackerRankLinkedList {
 
     public static void main(String[] args) {
-        
+        hasCycle(new SinglyLinkedListNode(3));
     }
 
-    static boolean hasCycle(SinglyLinkedListNode head) {
+    public static boolean hasCycle(SinglyLinkedListNode head) {
         if (head == null || head.next == null)
             return false;
 
@@ -23,7 +23,7 @@ public class HackerRankLinkedList {
         return true;
     }
 
-    static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+    public static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         if (head1 == null || head2 == null)
             return -1;
 
@@ -64,7 +64,7 @@ public class HackerRankLinkedList {
         return first.data;
     }
 
-    static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
+    public static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
         DoublyLinkedListNode previous = null;
         DoublyLinkedListNode current = head;
         while (current != null) {
@@ -76,7 +76,7 @@ public class HackerRankLinkedList {
         return previous;
     }
 
-    static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
+    public static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
         if (!isEmptyDoublyLinkedList(head)) {
             DoublyLinkedListNode newNode = new DoublyLinkedListNode(data);
 
@@ -114,11 +114,11 @@ public class HackerRankLinkedList {
         return head;
     }
 
-    static boolean isEmptyDoublyLinkedList(DoublyLinkedListNode head) {
+    public static boolean isEmptyDoublyLinkedList(DoublyLinkedListNode head) {
         return lengthDoublyLinkedList(head) == 0;
     }
 
-    static int lengthDoublyLinkedList(DoublyLinkedListNode head) {
+    public static int lengthDoublyLinkedList(DoublyLinkedListNode head) {
         if (head != null) {
             int i = 0;
             DoublyLinkedListNode current = head;
@@ -131,7 +131,7 @@ public class HackerRankLinkedList {
         return 0;
     }
 
-    static void printDoublyLinkedList(DoublyLinkedListNode node, String sep) {
+    public static void printDoublyLinkedList(DoublyLinkedListNode node, String sep) {
         while (node != null) {
             System.out.print(String.valueOf(node.data));
             node = node.next;
@@ -176,7 +176,7 @@ public class HackerRankLinkedList {
         }
     }
 
-    static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
         if (!isEmptySinglyLinkedList(head)) {
             int size = lengthSinglyLinkedList(head);
             SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
@@ -218,11 +218,11 @@ public class HackerRankLinkedList {
         return head;
     }
 
-    static boolean isEmptySinglyLinkedList(SinglyLinkedListNode head) {
+    public static boolean isEmptySinglyLinkedList(SinglyLinkedListNode head) {
         return lengthSinglyLinkedList(head) == 0;
     }
 
-    static int lengthSinglyLinkedList(SinglyLinkedListNode head) {
+    public static int lengthSinglyLinkedList(SinglyLinkedListNode head) {
         if (head != null) {
             int i = 0;
             SinglyLinkedListNode current = head;
@@ -235,7 +235,7 @@ public class HackerRankLinkedList {
         return 0;
     }
 
-    static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) {
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) {
         while (node != null) {
             System.out.print(String.valueOf(node.data));
             node = node.next;

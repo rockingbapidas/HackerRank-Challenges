@@ -9,19 +9,7 @@ import java.util.*;
 
 public class HackerRankJava {
     public static void main(String[] args) {
-        // helloWorld();
-        // stdInstdOut();
-        // ifElse();
-        // stdInstdOut2();
-        // ouputFormatting();
-        // loop();
-        // loop2();
-        // dataTypes();
-        // endOfFile();
-        // staticInitializer();
-        // intToString();
-        // javaDateTime();
-        // currencyFormatter();
+        currencyFormatter();
     }
 
     public static void currencyFormatter() {

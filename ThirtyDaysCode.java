@@ -6,43 +6,7 @@ import java.util.regex.Pattern;
 public class ThirtyDaysCode {
 
     public static void main(String[] args) throws IOException {
-        // helloWorld();
-        // dataTypes();
-        // operators();
-        // conditionalStatements();
-        // classVsInstance();
-        // loops();
-        // letsReview();
-        // arrays();
-        // recursion();
-        // binaryNumbers();
-        // inheritance();
-        // abstractClasses();
-        // scope();
-        // linkedList();
-        // exceptionsStringToInteger();
-        // new Calculator().power(2, 4);
-        // System.out.println(new Calculator2().divisorSum(1));
-        // sorting();
-
-        // Printer<Integer> intPrinter = new Printer<Integer>();
-        // Printer<String> stringPrinter = new Printer<String>();
-        // intPrinter.printArray(new Integer[]{1, 2, 3});
-        // stringPrinter.printArray(new String[]{"Hello", "World"});
-
-        // getHeight(root);
-        // levelOrder(root);
-        // runningTimeAndComplexity();
-        // nestedLogic();
-
-        // TestWithEmptyArray();
-        // TestWithUniqueValues();
-        // TestWithExactlyTwoDifferentMinimums();
-        // System.out.println("OK");
-
-        // regexPatterns();
-
-        // bitwiseAnd();
+        bitwiseAnd();
     }
 
     public static void bitwiseAnd() {
